@@ -7,7 +7,7 @@ import WalletProvider from './WalletProvider'; // New component
 import WalletUser from './WalletUser'; // New component
 
 
-function App() {
+function Apptwo() {
   return (
     <HashRouter>
       <nav>
