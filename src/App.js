@@ -3,6 +3,28 @@ import { HashRouter, Routes, Route, Link} from "react-router-dom"
 import { Input, Menu, Switch } from 'antd'
 import './App.css'
 import { TokenBalances, ERC20Transfers, TokenHolders, Transactions, ChainSelector} from '@covalenthq/web3-components'
+import WalletProvider from './WalletProvider'; // New component
+import WalletUser from './WalletUser'; // New component
+
+
+function App() {
+  return (
+    <HashRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/provider">Wallet Provider</Link>
+        <Link to="/user">Wallet User</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<SearchTokenBalances />} />
+        <Route path="/provider" element={<WalletProvider />} />
+        <Route path="/user" element={<WalletUser />} />
+      </Routes>
+    </HashRouter>
+  );
+}
+
 
 const { Search } = Input
 
