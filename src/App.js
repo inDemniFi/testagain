@@ -8,7 +8,7 @@ const { Search } = Input
 
 const FormControl = ({placeholder, onSearch}) => {
   return (
-    <Search placeholder={placeholder} onSearch={onSearch}
+    <Search placeholder={vitalik.eth} onSearch={onSearch}
       style={{
         width: 500,
       }}
