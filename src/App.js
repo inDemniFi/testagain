@@ -151,7 +151,7 @@ function App() {
   )
 }
 
-export default App
+
 
 // Demo API Key
 // script.js
@@ -478,4 +478,4 @@ function calculateUnderwritingDataPoints(approvalsData) {
 
 
 
-
+export default App
