@@ -3,8 +3,8 @@ import { HashRouter, Routes, Route, Link} from "react-router-dom"
 import { Input, Menu, Switch } from 'antd'
 import './App.css'
 import { TokenBalances, ERC20Transfers, TokenHolders, Transactions, ChainSelector} from '@covalenthq/web3-components'
-import WalletProvider from './WalletProvider'; // New component
-import WalletUser from './WalletUser'; // New component
+import WalletProvider from './WalletProvider'
+import WalletUser from './WalletUser'
 
 
 function Apptwo() {
