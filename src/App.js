@@ -404,9 +404,6 @@ async function getWalletData() {
   const oldestApprovalStatus = document.getElementById('oldestApprovalStatus');
   oldestApprovalStatus.textContent = approvalsData.isOldestApprovalOld ? 'Yes' : 'No';
 
-  // Call the function to display historical token balances
-  const historicalTokenBalances = await getHistoricalTokenBalances(tokenData.data.address);
-  displayHistoricalTokenBalances(historicalTokenBalances);
 
   // Calculate Underwriting Results based on the data
   const underwritingData = calculateUnderwritingDataPoints(approvalsData);
@@ -432,8 +429,6 @@ async function getWalletData() {
   const policyLimitElement = document.getElementById('policyLimit');
   policyLimitElement.textContent = underwritingData.policyLimit;
 
-  const deductibleElement = document.getElementById('deductible');
-  deductibleElement.textContent = deductible;
 
   // Call the function to get wallet age or date of first transaction
   const walletAddress = document.getElementById('address').value || 'demo.eth';
@@ -483,9 +478,6 @@ function calculateUnderwritingDataPoints(approvalsData) {
 async function getWalletAge(walletAddress) {
   const chainName = 'eth-mainnet'; // Replace with your desired chain name
 
-  const url = `https://api.covalenthq.com/v1/${chainName}/bulk/transactions/${walletAddress}/`;
-  const headers = new Headers();
-  headers.set('Authorization', `Bearer ${apiKey}`);
 
   try {
     const resp = await fetch(url, { method: 'GET', headers });
@@ -529,7 +521,7 @@ function calculateWalletAgeFromCreation(creationDateStr) {
 async function getHistoricalTokenBalances(walletAddress) {
   const chainName = 'eth-mainnet'; // Replace with your desired chain name
 
-  const url = `https://api.covalenthq.com/v1/${chainName}/address/${walletAddress}/portfolio_v2/`;
+
 
   const headers = new Headers();
   headers.set('Authorization', `Bearer ${apiKey}`);
@@ -557,19 +549,9 @@ async function getHistoricalTokenBalances(walletAddress) {
 
 
 
-// Call the function to display historical token balances when the page is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  const walletAddress = document.getElementById('address').value || 'demo.eth';
-  displayHistoricalTokenBalances(walletAddress);
-});
-
 async function getUniqueAddresses(routerAddress) {
   const chainName = 'eth-mainnet'; // Replace with the desired chain name
 
-  const url = `https://api.covalenthq.com/v1/${chainName}/events/address/${contractAddress}/`;
-
-  const headers = new Headers();
-  headers.set('Authorization', `Bearer ${apiKey}`);
 
   try {
     const resp = await fetch(url, { method: 'GET', headers });
