@@ -72,12 +72,12 @@ const SearchTokenBalances = () => {
   const onSearch = (value) => setAddress(value);
   
   return(
-    <div className="App" style={{ width: "70vw", padding: "10px", display: "center", justifyContent: "center" }}>
+    <div className="App" style={{  width: "70vw", padding: "25px" }}>
       <div>
         <ChainSelector setChainName={setChainName} />
         <FormControl placeholder="Enter a wallet address or ENS domain (only if Ethereum selected)" onSearch={onSearch} />
       </div>
-      <div style={{ width: "70vw", padding: "10px", display: "center", justifyContent: "center" }}>
+      <div>
         <br></br>
         <p><b>Provided Address:</b> {address}</p>
         <p><b>Chain:</b> {chainName}</p>
