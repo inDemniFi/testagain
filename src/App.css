@@ -368,3 +368,7 @@ footer {
 .footer-link:hover {
   color: #ffffff; /* Change the hover color to white */
 }
+
+root {
+  display: center;
+}
