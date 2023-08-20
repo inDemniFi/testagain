@@ -38,6 +38,31 @@
   }
 }
 
+/* Override library styles for token tables */
+.TokenBalances,
+.ERC20Transfers,
+.TokenHolders,
+.Transactions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Modify table cell styles for width */
+.TokenBalances td,
+.ERC20Transfers td,
+.TokenHolders td,
+.Transactions td {
+  max-width: 200px; /* Adjust this value as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 body {
   background: #a6a6a6;
   height: 100vh;
